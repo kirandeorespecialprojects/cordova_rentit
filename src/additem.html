@@ -1,0 +1,151 @@
+<template>
+  <div ref="additem">  
+    <header id="header" class="clearfix" data-current-skin="blue">
+      <ul class="header-inner">
+          <li class="pull-left">
+              <ul class="top-menu">
+                  <li>
+                      <a click.delegate="page.router.navigate('welcome')">
+                        <i class="tm-icon zmdi zmdi-arrow-left"></i>
+                      </a>
+                  </li>
+              </ul>
+          </li>
+          <li class="mobilelogo">
+              <a click.delegate="page.router.navigate('welcome')">Rent/Sell/Trade Item</a>
+          </li>                          
+      </ul>
+    </header>
+
+    <section id="main" style="padding-top: 75px; padding-bottom: 0px;">
+        <section id="content">
+            <div class="container">
+                <div class="card" style="margin-bottom: 5px;">
+                  <div class="card-body card-padding p-timeline" style="margin-bottom: 0px; padding: 10px;">
+                    <div class="lightbox clearfix">
+                      <div data-src="media/gallery/1.jpg">
+                          <div class="lightbox-item">
+                              <img src="media/gallery/thumbs/1.jpg" alt="" />
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Recent Posts -->
+                <div class="card" style="margin-bottom: 5px;">
+                    <div class="card-body card-padding">
+                      <div class="form-group"> <!--fg-float-->
+                          <div class="fg-line">
+                              <input type="text" class="form-control fg-input" placeholder="Title" value.bind="title">
+                              <!-- <label class="fg-label">Title</label> -->
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="fg-line">
+                              <textarea class="form-control auto-size" placeholder="Description"></textarea>
+                              <!-- <label class="fg-label">Description</label> -->
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-4">
+                            <label class="checkbox checkbox-inline m-r-20">
+                                <input type="checkbox" value="rent" checked.bind="isrent">
+                                <i class="input-helper"></i>    
+                                Rent
+                            </label>
+                          </div>
+                          <div class="col-xs-4">
+                            <label class="checkbox checkbox-inline m-r-20">
+                                <input type="checkbox" value="sale" checked.bind="issale">
+                                <i class="input-helper"></i>    
+                                Sale
+                            </label>
+                          </div>
+                          <div class="col-xs-4">
+                            <label class="checkbox checkbox-inline m-r-20">
+                                <input type="checkbox" value="trade" checked.bind="istrade">
+                                <i class="input-helper"></i>    
+                                Trade
+                            </label>
+                          </div>
+                      </div>
+                      <br>
+                      <div class="row">
+                          <div class="col-xs-5">
+                             <select class="selectpicker">
+                                <option>USD</option>
+                                <option>EUR</option>
+                             </select>
+                          </div>
+                          <div class="col-xs-7" style.bind="issale.length > 0? 'visibility: visible': 'visibility: hidden'">
+                              <div class="form-group fg-float">
+                                  <div class="fg-line">
+                                      <input type="text" class="form-control" placeholder="">
+                                      <label class="fg-label">Sale price (optional)</label>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row" style.bind="isrent.length > 0? 'display: block': 'display: none'">
+                          <div class="col-xs-5">
+                              <select class="selectpicker">
+                                <option>Hourly</option>
+                                <option>Daily</option>
+                                <option>Weekly</option>
+                                <option>Monthly</option>
+                                <option>Yearly</option>
+                             </select>
+                          </div>
+                          <div class="col-xs-7">
+                              <div class="form-group fg-float">
+                                  <div class="fg-line">
+                                      <input type="text" class="form-control" placeholder="">
+                                      <label class="fg-label">Rent price (optional)</label>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group" style.bind="istrade.length > 0? 'display: block': 'display: none'">
+                        <div class="fg-line">
+                            <input type="text" class="typeahead form-control" placeholder="Trade for (optional)">
+                        </div>
+                      </div>
+                      <select class="selectpicker">
+                          <option>Choose a category (optional)</option>
+                          <option>Electronics</option>
+                          <option>Cars and Motors</option>
+                          <option>Sports, Leisure and Games</option>
+                          <option>Home and Garden</option>
+                          <option>Movies, Books and Music</option>
+                          <option>Fashion and Accessories</option>
+                          <option>Baby and Child</option>
+                          <option>Other</option>
+                      </select>
+                      <br>
+                      <br>
+                      <div class="checkbox m-b-15">
+                          <label>
+                              <input type="checkbox" value="">
+                              <i class="input-helper"></i>
+                              Share on Facebook
+                          </label>
+                      </div>
+                      <button class="btn btn-primary btn-block waves-effect">Save</button>
+                </div>
+            </div>
+        </section>
+    </section>
+          
+    <!-- <footer id="footer">
+        Copyright &copy; 2015 Material Admin
+        
+        <ul class="f-menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">Dashboard</a></li>
+            <li><a href="">Reports</a></li>
+            <li><a href="">Support</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </footer>   -->
+  </div>  
+</template>

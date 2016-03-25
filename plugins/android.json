@@ -1,0 +1,28 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.object5.rentit"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.object5.rentit"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.object5.rentit"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.object5.rentit"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-android-support-v4": {
+            "PACKAGE_NAME": "com.object5.rentit"
+        }
+    }
+}
